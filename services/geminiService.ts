@@ -2,11 +2,11 @@ import { GoogleGenAI } from "@google/genai";
 import { DeviceState } from "../types";
 
 const getAIClient = () => {
-  if (!process.env.API_KEY) {
-    console.warn("Dev Warning: API_KEY is missing.");
-    return null;
-  }
-  return new GoogleGenAI({ apiKey: process.env.API_KEY });
+  // if (!process.env.API_KEY) {
+  //   console.warn("Dev Warning: API_KEY is missing.");
+  //   return null;
+  // }
+  return new GoogleGenAI({ apiKey: "AIzaSyBQKSXjX6b6mw1vELxOBT84y3gLsLPVdkQ" });
 };
 
 export const generateTechnicalExplanation = async (
