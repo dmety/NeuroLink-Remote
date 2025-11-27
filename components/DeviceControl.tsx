@@ -16,7 +16,7 @@ export const DeviceControl: React.FC<DeviceControlProps> = ({ deviceState, setDe
 
   // Simulate telemetry updates smoothly
   useEffect(() => {
-    let interval: ReturnType<typeof setInterval> | undefined;
+    let interval: NodeJS.Timeout;
     if (deviceState.status === 'online') {
       interval = setInterval(() => {
         setDeviceState(prev => {
