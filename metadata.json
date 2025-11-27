@@ -1,0 +1,7 @@
+{
+  "name": "NeuroLink Remote",
+  "description": "由 Gemini 驱动的未来派远程控制仪表板。模拟远程电源管理（网络唤醒、关机），并提供关于如何实施硬件控制机制的 AI 驱动技术指南。",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}

@@ -1,11 +1,44 @@
-<div align="center">
+# NeuroLink 远程控制终端
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+![Status](https://img.shields.io/badge/Status-Active-success) ![AI](https://img.shields.io/badge/AI-Gemini_2.5-blue)
 
-  <h1>Built with AI Studio</h2>
+**NeuroLink** 是一个由 Google Gemini API 驱动的未来派远程控制仪表板。
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+本项目模拟了远程电源管理（网络唤醒 Wake-on-LAN、关机）的操作界面，并集成了一个智能 AI 助手，指导用户如何搭建真实的硬件控制环境。
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+## ✨ 功能特性
 
-</div>
+*   **赛博朋克 UI**: 沉浸式深色模式、CRT 扫描线效果和动态系统遥测可视化。
+*   **设备控制模拟**: 模拟发送魔术封包 (WoL) 和执行远程 RPC 关机指令的流程。
+*   **AI 神经助手**: 集成 Google Gemini 模型，提供关于 BIOS 设置、内网穿透（Frp/Ngrok）和硬件接线（树莓派/ESP32）的实时技术支持。
+*   **实战部署指南**: 内置详细的架构指南，帮助用户理解如何将此前端对接到真实的后端服务以控制物理电脑。
+*   **实时终端日志**: 类似黑客终端的实时操作日志反馈系统。
+
+## 🛠️ 技术栈
+
+*   **核心框架**: React 19, TypeScript
+*   **样式系统**: Tailwind CSS (自定义 Cyber 调色板)
+*   **人工智能**: Google GenAI SDK (@google/genai)
+*   **图标库**: Lucide React
+
+## 🚀 使用说明
+
+### 1. 模拟操作
+点击主界面的 **“唤醒”** 或 **“关机”** 按钮。系统会模拟发送网络请求，并通过 AI 生成一段关于当前正在使用的底层网络协议（如 UDP Magic Packet）的技术解释。
+
+### 2. AI 咨询
+切换到 **“助手”** 标签页，您可以询问如下问题：
+*   “我的主板怎么开启 WoL？”
+*   “如何用树莓派做远程开机服务器？”
+*   “我在外网怎么连回家里的电脑？”
+
+### 3. 真实部署
+点击右上角的 **“部署指南”** 按钮，查看将此应用转化为真实远程控制器的架构图和代码实现建议。
+
+## ⚠️ 注意事项
+
+当前版本为一个**前端控制面板模拟器**。
+虽然 UI 和交互逻辑是完整的，但点击“唤醒”或“关机”目前默认只触发模拟协议演示。要控制真实设备，请参考应用内的指南修改 API 调用逻辑。
+
+---
+*Powered by Google Gemini*
