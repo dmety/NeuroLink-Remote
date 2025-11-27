@@ -53,28 +53,30 @@ const App: React.FC = () => {
       <Header onOpenGuide={() => setShowGuide(true)} />
       
       {/* Main Content Area */}
-      <main className="flex-1 max-w-7xl mx-auto w-full p-4 md:p-6 grid grid-cols-1 lg:grid-cols-12 gap-6 z-10 pb-24 lg:pb-6">
+      <main className="flex-1 max-w-7xl mx-auto w-full p-4 md:p-6 grid grid-cols-1 lg:grid-cols-12 gap-6 z-10 pb-24 lg:pb-0">
         
         {/* Left Column: Device Control & Status */}
-        <div className={`lg:col-span-7 flex flex-col gap-6 transition-opacity duration-300 ${activeTab === 'chat' ? 'hidden lg:flex' : 'flex'}`}>
+        <div className={`lg:col-span-7 flex flex-col gap-6 transition-opacity duration-300 lg:h-[calc(100vh-110px)] ${activeTab === 'chat' ? 'hidden lg:flex' : 'flex'}`}>
           <DeviceControl 
             deviceState={deviceState} 
             setDeviceState={setDeviceState} 
             addLog={addLog}
           />
-          <div className="flex-1 min-h-[300px] bg-cyber-800 border border-cyber-700 rounded-lg p-4 shadow-lg shadow-black/50 relative overflow-hidden">
-             <div className="flex items-center gap-2 mb-4 text-cyber-500 border-b border-cyber-700 pb-2">
+          <div className="flex-1 min-h-[250px] bg-cyber-800 border border-cyber-700 rounded-lg p-4 shadow-lg shadow-black/50 relative overflow-hidden flex flex-col">
+             <div className="flex items-center gap-2 mb-2 text-cyber-500 border-b border-cyber-700 pb-2 shrink-0">
                 <Terminal size={18} />
                 <h2 className="font-bold tracking-wider">系统日志 / SYSTEM LOG</h2>
              </div>
-             <ConsoleLog logs={logs} />
+             <div className="flex-1 overflow-hidden">
+                <ConsoleLog logs={logs} />
+             </div>
           </div>
         </div>
 
         {/* Right Column: AI Assistant */}
-        <div className={`lg:col-span-5 flex flex-col gap-6 h-[calc(100vh-140px)] lg:h-auto ${activeTab === 'control' ? 'hidden lg:flex' : 'flex'}`}>
+        <div className={`lg:col-span-5 flex flex-col gap-6 h-[calc(100vh-160px)] lg:h-[calc(100vh-110px)] ${activeTab === 'control' ? 'hidden lg:flex' : 'flex'}`}>
            <div className="flex-1 bg-cyber-800 border border-cyber-700 rounded-lg shadow-lg shadow-black/50 flex flex-col overflow-hidden">
-              <div className="p-4 border-b border-cyber-700 flex items-center justify-between bg-cyber-900/50">
+              <div className="p-4 border-b border-cyber-700 flex items-center justify-between bg-cyber-900/50 shrink-0">
                 <div className="flex items-center gap-2 text-blue-400">
                   <Cpu size={18} />
                   <h2 className="font-bold tracking-wider">AI 助手 / ASSISTANT</h2>
@@ -84,7 +86,9 @@ const App: React.FC = () => {
                    <div className="text-[10px] text-slate-500 font-bold">ONLINE</div>
                 </div>
               </div>
-              <AIChat addLog={addLog} deviceState={deviceState} />
+              <div className="flex-1 overflow-hidden">
+                  <AIChat addLog={addLog} deviceState={deviceState} />
+              </div>
            </div>
         </div>
 
