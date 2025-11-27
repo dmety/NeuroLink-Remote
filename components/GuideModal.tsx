@@ -66,7 +66,7 @@ export const GuideModal: React.FC<GuideModalProps> = ({ onClose }) => {
             <div className="ml-11 bg-slate-900/50 p-4 rounded border border-slate-700/50 space-y-3 text-sm">
                 <div className="flex gap-2 items-start">
                     <ArrowRight size={16} className="text-cyber-500 mt-1 shrink-0" />
-                    <p><strong className="text-white">主板支持：</strong> 确保主板支持 <strong>Wake-on-LAN (WoL)</strong>。进入 BIOS (通常按 Del/F2) -> 电源管理 -> 开启 "PCIe Device Power On"。</p>
+                    <p><strong className="text-white">主板支持：</strong> 确保主板支持 <strong>Wake-on-LAN (WoL)</strong>。进入 BIOS (通常按 Del/F2) - 电源管理 - 开启 "PCIe Device Power On"。</p>
                 </div>
                 <div className="flex gap-2 items-start">
                     <ArrowRight size={16} className="text-cyber-500 mt-1 shrink-0" />
@@ -74,7 +74,7 @@ export const GuideModal: React.FC<GuideModalProps> = ({ onClose }) => {
                 </div>
                 <div className="flex gap-2 items-start">
                     <ArrowRight size={16} className="text-cyber-500 mt-1 shrink-0" />
-                    <p><strong className="text-white">系统设置：</strong> Windows 设备管理器 -> 网卡属性 -> 电源管理 -> 勾选“允许此设备唤醒计算机”。</p>
+                    <p><strong className="text-white">系统设置：</strong> Windows 设备管理器 - 网卡属性 - 电源管理 - 勾选“允许此设备唤醒计算机”。</p>
                 </div>
             </div>
           </section>
